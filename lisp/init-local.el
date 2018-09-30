@@ -33,14 +33,8 @@
 (global-set-key (kbd "C-c e") 'helm-gtags-find-pattern)
 (global-set-key (kbd "C-c s") 'helm-gtags-find-symbol)
 (global-set-key (kbd "C-c t") 'helm-gtags-find-tag)
+(global-set-key (kbd "C-c g") 'helm-do-grep-ag)
 
-(defun helm-do-grep-recursive (&optional non-recursive)
-  "Like `helm-do-grep', but greps recursively by default."
-  (interactive "P")
-  (let* ((current-prefix-arg (not non-recursive))
-         (helm-current-prefix-arg non-recursive))
-    (call-interactively 'helm-do-grep)))
-(global-set-key (kbd "C-c g") 'helm-do-grep-recursive)
 
                                         ;(require 'helm-gtags)
 (add-hook 'c-mode-common-hook
