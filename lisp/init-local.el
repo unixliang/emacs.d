@@ -18,16 +18,14 @@
 
 
 
-
-
-
+(require-package 'ggtags)
+(require-package 'helm)
+(require-package 'helm-gtags)
 
 
 
 
 ;; start helm-gtags
-(require-package 'helm-gtags)
-
 (global-set-key (kbd "C-]") 'helm-gtags-find-tag-from-here)
 (global-set-key (kbd "C-t") 'helm-gtags-pop-stack)
 (global-set-key (kbd "C-c r") 'helm-gtags-find-rtag)
@@ -57,7 +55,7 @@
 
 
 ;; start gnu global
-(require-package 'ggtags)
+
 
 
 ;;;; 开启ggtags-mode
@@ -193,7 +191,6 @@
 
 
 ;; start C-SPC select text
-(require-package 'helm)
 (global-set-key (kbd "C-]") 'helm-toggle-visible-mark)
 ;; end C-SPC select text
 
