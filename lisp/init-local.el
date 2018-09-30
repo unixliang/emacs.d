@@ -189,11 +189,6 @@
 
 
 
-
-;; start C-SPC select text
-(global-set-key (kbd "C-]") 'helm-toggle-visible-mark)
-;; end C-SPC select text
-
 ;; start better word search
 (global-set-key (kbd "C-s") 'helm-occur)
 ;; end better word search
