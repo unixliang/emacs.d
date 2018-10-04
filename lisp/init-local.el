@@ -187,6 +187,12 @@
 (global-set-key (kbd "C-s") 'helm-occur)
 ;; end better word search
 
+;; start symbol
+(global-set-key (kbd "M-I") 'symbol-overlay-remove-all)
+;; end symbol
 
+;; start overwrite indent in namespace
+(c-set-offset 'innamespace 0)
+;; end overwrite indent in namespace
 
 (provide 'init-local)
