@@ -13,6 +13,10 @@
   (setq css-indent-offset n) ; css-mode
   )
 (my-setup-indent 4)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
 ;; end indent
 
 
@@ -53,7 +57,10 @@
 
 
 ;;;; 开启ggtags-mode
-(ggtags-mode)
+; (ggtags-mode) ; 不要全局打开ggtags-mode，否则其他类型文件的保存会触发 (add-hook 'after-save-hook #'gtags-update-hook)，导致gtags在后台吃cpu
+(add-hook 'c-mode-hook 'ggtags-mode)
+(add-hook 'c++-mode-hook 'ggtags-mode)
+
 
 ;;;;; 全量更新
 (defun gtags-root-dir ()
@@ -106,7 +113,7 @@
             (derived-mode-p 'c-mode 'c++-mode 'java-mode)
             (ggtags-mode 1)))
 
-;; start gnu global
+;; end gnu global
 
 
 
