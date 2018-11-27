@@ -1,3 +1,10 @@
+;; start coding
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'gb18030)
+(prefer-coding-system 'utf-8)
+;; end coding
+
+
 ;; start indent
 (defun my-setup-indent (n)
   ;; java/c/c++
