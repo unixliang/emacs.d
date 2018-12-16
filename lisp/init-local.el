@@ -32,6 +32,7 @@
 (require-package 'ggtags)
 (require-package 'helm)
 (require-package 'helm-gtags)
+(require-package 'protobuf-mode)
 
 
 
@@ -226,3 +227,8 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 (set-exec-path-from-shell-PATH)
 ;; end set-exec-path-from-shell-PATH
+
+
+;; start protobuf-mode
+(setq auto-mode-alist  (cons '(".proto$" . protobuf-mode) auto-mode-alist))
+;; end protobuf-mode
