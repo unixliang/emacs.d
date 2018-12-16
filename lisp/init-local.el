@@ -231,4 +231,5 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 ;; start protobuf-mode
 (setq auto-mode-alist  (cons '(".proto$" . protobuf-mode) auto-mode-alist))
+(add-hook 'protobuf-mode-hook 'symbol-overlay-mode)
 ;; end protobuf-mode
