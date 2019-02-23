@@ -52,8 +52,8 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-              (linum-mode 1)
-              (setq linum-format "%d ")
+              ;(linum-mode 1)
+              ;(setq linum-format "%d ")
               (helm-gtags-mode 1)
               )))
 
