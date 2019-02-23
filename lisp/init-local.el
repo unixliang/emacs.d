@@ -65,7 +65,7 @@
 
 
 ;;;; 开启ggtags-mode
-; (ggtags-mode) ; 不要全局打开ggtags-mode，否则其他类型文件的保存会触发 (add-hook 'after-save-hook #'gtags-update-hook)，导致gtags在后台吃cpu
+                                        ; (ggtags-mode) ; 不要全局打开ggtags-mode，否则其他类型文件的保存会触发 (add-hook 'after-save-hook #'gtags-update-hook)，导致gtags在后台吃cpu
 (add-hook 'c-mode-hook 'ggtags-mode)
 (add-hook 'c++-mode-hook 'ggtags-mode)
 
@@ -208,8 +208,14 @@
 (global-set-key (kbd "M-I") 'symbol-overlay-remove-all)
 ;; end symbol
 
+;; start open .h with c++ mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;; end open .h with c++ mode
+
 ;; start overwrite indent in namespace
-(c-set-offset 'innamespace 0)
+(defun my-c-setup ()
+  (c-set-offset 'innamespace [0]))
+(add-hook 'c++-mode-hook 'my-c-setup)
 ;; end overwrite indent in namespace
 
 (provide 'init-local)
