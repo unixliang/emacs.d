@@ -19,10 +19,10 @@
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
   (setq css-indent-offset n) ; css-mode
   )
-(my-setup-indent 4)
+(my-setup-indent 2)
 
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 ;; end indent
 
@@ -239,3 +239,7 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 (setq auto-mode-alist  (cons '(".proto$" . protobuf-mode) auto-mode-alist))
 (add-hook 'protobuf-mode-hook 'symbol-overlay-mode)
 ;; end protobuf-mode
+
+
+
+;(set-default-font "Monaco 18")
