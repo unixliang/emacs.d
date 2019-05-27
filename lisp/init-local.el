@@ -158,7 +158,7 @@
 
 ;; start find file
 (global-set-key (kbd "C-x l") 'helm-locate)
-(global-set-key (kbd "C-x g") 'helm-regexp)
+                                        ;(global-set-key (kbd "C-x g") 'helm-regexp)
 ;; end find file
 
 ;; start for update buffer while git branch change
@@ -242,4 +242,8 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 
 
-;(set-default-font "Monaco 18")
+                                        ;(set-default-font "Monaco 18")
+
+
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
