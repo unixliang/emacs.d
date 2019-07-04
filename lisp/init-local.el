@@ -196,9 +196,14 @@
       scroll-conservatively 0)
 
 (add-hook 'markdown-mode-hook (lambda () (auto-fill-mode 0)))
+(add-hook 'markdown-mode-hook 'symbol-overlay-mode)
 ;; end markdown
 
 
+;; start 2 spaces indent
+(custom-set-variables
+ '(c-basic-offset 2))
+;; end 2 spaces indent
 
 ;; start better word search
 (global-set-key (kbd "C-s") 'helm-occur)
@@ -247,3 +252,6 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+
+(global-set-key (kbd "C-r") 'revert-buffer)
