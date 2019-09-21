@@ -288,3 +288,7 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 
 ;; end tabnine
+
+;; start close debug
+(setq toggle-debug-on-error 0)
+;; end close debug
