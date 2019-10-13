@@ -292,3 +292,12 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 ;; start close debug
 (setq toggle-debug-on-error 0)
 ;; end close debug
+
+
+;; start helm-projectile
+(require 'projectile)
+(projectile-mode +1)
+(require 'helm-projectile)
+(helm-projectile-on)
+(global-set-key (kbd "C-c f") 'helm-projectile-find-file-dwim)
+;; end helm-projectile
