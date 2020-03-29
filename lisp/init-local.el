@@ -41,11 +41,11 @@
 (global-set-key (kbd "C-]") 'helm-gtags-find-tag-from-here)
 (global-set-key (kbd "C-t") 'helm-gtags-pop-stack)
 (global-set-key (kbd "C-c r") 'helm-gtags-find-rtag)
-(global-set-key (kbd "C-c f") 'helm-gtags-find-files)
+(global-set-key (kbd "C-c C-f") 'helm-gtags-find-files)
 (global-set-key (kbd "C-c e") 'helm-gtags-find-pattern)
 (global-set-key (kbd "C-c s") 'helm-gtags-find-symbol)
 (global-set-key (kbd "C-c t") 'helm-gtags-find-tag)
-(global-set-key (kbd "C-c g") 'helm-do-grep-ag)
+(global-set-key (kbd "C-c C-g") 'helm-do-grep-ag)
 
 
                                         ;(require 'helm-gtags)
@@ -148,7 +148,7 @@
 ;; end forbidon old find file
 
 ;; start .cpp/.h change
-(global-set-key (kbd "C-h") 'ff-find-other-file)
+(global-set-key (kbd "M-h") 'ff-find-other-file)
 ;; end .cpp/.h change
 
 
@@ -301,3 +301,8 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 (helm-projectile-on)
 (global-set-key (kbd "C-c f") 'helm-projectile-find-file-dwim)
 ;; end helm-projectile
+
+
+;; start k8s
+                                        ;(require 'kubernetes-overview)
+;; end k8s
