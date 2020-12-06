@@ -45,15 +45,16 @@
 (global-set-key (kbd "C-c e") 'helm-gtags-find-pattern)
 (global-set-key (kbd "C-c s") 'helm-gtags-find-symbol)
 (global-set-key (kbd "C-c t") 'helm-gtags-find-tag)
-(global-set-key (kbd "C-c C-g") 'helm-do-grep-ag)
+(global-set-key (kbd "C-c g") 'helm-do-grep-ag)
+(global-set-key (kbd "C-c C-g") 'helm-ag-project-root)
 
 
                                         ;(require 'helm-gtags)
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-              ;(linum-mode 1)
-              ;(setq linum-format "%d ")
+                                        ;(linum-mode 1)
+                                        ;(setq linum-format "%d ")
               (helm-gtags-mode 1)
               )))
 
@@ -176,12 +177,16 @@
 
 ;; replace system default C-x b, support fuzzy match
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-mini)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t
       helm-buffer-max-length nil)
 ;; replace system default C-x b, support fuzzy match
 
-
+;; replace C-x b by ace-jump-buffer
+                                        ;(require 'ace-jump-buffer)
+                                        ;(global-set-key (kbd "C-x b") 'ace-jump-buffer)
+;; replace C-x b by ace-jump-buffer
 
 
 
@@ -247,7 +252,7 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 
 
-                                        (set-default-font "Monaco 13")
+                                        (set-default-font "Monaco 14")
 
 
 (require 'magit)
@@ -269,10 +274,12 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 (require 'company-tabnine)
 (add-to-list 'company-backends #'company-tabnine)
 ;; Trigger completion immediately.
-(setq company-idle-delay 0)
+(setq company-idle-delay 0.1)
 
 ;; Number the candidates (use M-1, M-2 etc to select completions).
 (setq company-show-numbers t)
+
+(setq company-minimum-prefix-length 2)
 
 ;; Use the tab-and-go frontend.
 ;; Allows TAB to select and complete at the same time.
@@ -295,14 +302,21 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 
 ;; start helm-projectile
-(require 'projectile)
-(projectile-mode +1)
-(require 'helm-projectile)
-(helm-projectile-on)
-(global-set-key (kbd "C-c f") 'helm-projectile-find-file-dwim)
+                                        ;(require 'projectile)
+                                        ;(projectile-mode +1)
+                                        ;(require 'helm-projectile)
+                                        ;(helm-projectile-on)
+                                        ;(global-set-key (kbd "C-c f") 'helm-projectile-find-file-dwim)
+
 ;; end helm-projectile
 
 
 ;; start k8s
                                         ;(require 'kubernetes-overview)
 ;; end k8s
+
+
+
+(defadvice ace-jump-done (after ibuffer-ace-select activate)
+  (if (eq major-mode 'ibuffer-mode)
+      (ibuffer-visit-buffer)))
