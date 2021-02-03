@@ -252,7 +252,7 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 
 
-                                        (set-default-font "Monaco 14")
+                                        (set-default-font "Monaco 15")
 
 
 (require 'magit)
