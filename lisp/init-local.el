@@ -279,7 +279,7 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 ;; Number the candidates (use M-1, M-2 etc to select completions).
 (setq company-show-numbers t)
 
-(setq company-minimum-prefix-length 2)
+(setq company-minimum-prefix-length 3)
 
 ;; Use the tab-and-go frontend.
 ;; Allows TAB to select and complete at the same time.
